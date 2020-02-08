@@ -3,9 +3,14 @@
 html,
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: white;
+  background-color: white !important;
 }
 
+html,
+body.bgcolor {
+  font-family: 'Raleway', sans-serif;
+  background-color: #722359;
+}
 .card-title,
 .footer-big h4,
 .footer-big h5,
