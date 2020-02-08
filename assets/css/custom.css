@@ -734,3 +734,16 @@ html body.bgcolor {
   border-bottom: 1px solid gainsboro;
   margin-bottom: 24px;
 }
+
+.userpix {
+  background-size: cover;
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.togglebutton label input[type='checkbox']:checked + .toggle {
+  background-color: rgb(114, 36, 89);
+}
