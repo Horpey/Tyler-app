@@ -613,6 +613,15 @@ html body.bgcolor {
   margin-top: 7px;
   border-radius: 43px;
 }
+.fence-img {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 40px;
+  height: 40px;
+  margin-top: 7px;
+  border-radius: 43px;
+}
 
 .fenceselect {
   position: absolute;
@@ -691,4 +700,37 @@ html body.bgcolor {
   padding: 13px 0px 20px 16px;
   box-shadow: -1px 3px 6px #d7d7d7;
   margin-bottom: 10px;
+}
+
+.circle-delete i {
+  background: #ffd6e4;
+  padding: 13px;
+  font-size: 19px;
+  color: #722359;
+  border-radius: 40px;
+}
+
+.addMembers {
+  background: white;
+  box-shadow: 0px -3px 8px #0000003d;
+  padding: 16px 0px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+
+.codelink {
+  font-weight: bold;
+  color: #621f4d;
+  font-size: 44px;
+}
+
+.navbar-translate .material-icons.moreicon {
+  font-size: 21px;
+}
+
+.placelist {
+  border-bottom: 1px solid gainsboro;
+  margin-bottom: 24px;
 }
