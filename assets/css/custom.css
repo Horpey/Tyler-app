@@ -653,10 +653,21 @@ html body.bgcolor {
   z-index: 0;
   height: 100vh;
 }
-.leaflet-control-container {
+.leaflet-control-zoom,
+.leaflet-control-gps {
   display: none;
 }
+.leaflet-right {
+  right: 6% !important;
+}
 
+.leaflet-top {
+  top: 11% !important;
+}
+
+.leaflet-bottom {
+  bottom: 7% !important;
+}
 .btn.btn-outline-primary {
   color: #722359;
   background-color: transparent;

@@ -1,5 +1,5 @@
 var map = new L.Map('mapid', {
-  zoom: 19,
+  zoom: 15,
   center: new L.latLng([41.57573, 13.002411])
 });
 
@@ -7,8 +7,7 @@ map.addLayer(
   new L.TileLayer(
     'https://api.mapbox.com/styles/v1/horpey/ck68ctwxv02oa1incg8s1rc9d/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaG9ycGV5IiwiYSI6ImNqZXNrOHgweDN3ZHgycW1lNGd0MzY2NG8ifQ.iE72uu46mll2LzAIP2KRQA',
     {
-      attribution:
-        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      attribution: '',
       maxZoom: 32,
       id: 'mapbox/streets-v11',
       accessToken: 'your.mapbox.access.token'
@@ -73,5 +72,51 @@ gps
   .on('gps:disabled', function(e) {
     e.marker.closePopup();
   });
+
+// EDIT ToolBAR
+// FeatureGroup is to store editable layers
+// add leaflet-geoman controls with some options to the map
+map.pm.addControls({
+  position: 'topright',
+  drawMarker: false,
+  drawCircleMarker: false,
+  drawPolyline: false,
+  drawRectangle: false,
+  drawCircle: false,
+  editMode: false,
+  dragMode: false,
+  cutPolygon: false
+});
+
+// Listen To Draw Event
+map.on('pm:drawstart', ({ workingLayer }) => {
+  workingLayer.on('pm:vertexadded', e => {
+    console.log(e.target._latlngs);
+  });
+});
+
+// Customize Line
+// optional options for line style during draw. These are the defaults
+var options = {
+  // the lines between coordinates/markers
+  templineStyle: {
+    color: '#722459'
+  },
+
+  // the line from the last marker to the mouse cursor
+  hintlineStyle: {
+    color: '#722459',
+    dashArray: [5, 5]
+  }
+};
+
+// enable drawing mode for shape - e.g. Poly, Line, Circle, etc
+// map.pm.enableDraw('Polygon', options);
+
+map.pm.setPathOptions({
+  color: '#722459',
+  fillColor: '#FFD6E4',
+  fillOpacity: 0.4
+});
 
 gps.addTo(map);
