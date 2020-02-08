@@ -3,6 +3,7 @@
 html,
 body {
   font-family: 'Raleway', sans-serif;
+  background-color: white;
 }
 
 .card-title,
@@ -546,4 +547,24 @@ body {
   100% {
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
+}
+
+/* TYLER STYLES */
+.logo-head {
+  background-image: url(../img/tyler/plain-pattern.svg);
+  background-color: #722359;
+  background-repeat: repeat;
+  background-size: 90%;
+  height: 60vh;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #722359 !important;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.formbtn .btn {
+  margin-top: 60px;
 }
