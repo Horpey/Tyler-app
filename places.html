@@ -100,9 +100,9 @@
                     </div>
 
                     <div class="col-2">
-                        <span class="">
+                        <a type="button" data-toggle="modal" data-target="#editPlace" class="">
                             <i class="material-icons">edit</i>
-                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -122,9 +122,9 @@
                     </div>
 
                     <div class="col-2">
-                        <span class="">
+                        <a type="button" data-toggle="modal" data-target="#editPlace" class="">
                             <i class="material-icons">edit</i>
-                        </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -151,6 +151,34 @@
                             <input class="form-control" type="text" placeholder="Place Address" />
                         </div>
                         <button class="btn btn-block btn-primary mt-4">Add Place</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Edit Place -->
+    <div class="modal fade" id="editPlace" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-bold">Edit Place</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="material-icons">clear</i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group mb-3">
+                            <input value="Home" class="form-control" type="text" placeholder="Place Title" />
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input value="7, Olufemi Street, off Nathan, Surulere, Lagos." class="form-control"
+                                type="text" placeholder="Place Address" />
+                        </div>
+                        <button class="btn btn-block btn-primary mt-4">Edit Place</button>
                     </form>
                 </div>
             </div>
