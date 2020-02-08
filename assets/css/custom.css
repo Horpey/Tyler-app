@@ -44,7 +44,7 @@ html body.bgcolor {
 }
 
 .loginbg {
-  background-color: #e61d2b;
+  background-color: #722359;
   background-image: url(../img/coke/loginbg.svg);
   background-position: bottom;
   background-size: cover;
@@ -85,8 +85,8 @@ html body.bgcolor {
 }
 
 .btn.btn-primary {
-  background-color: #e61d2b;
-  border-color: #e61d2b;
+  background-color: #722359;
+  border-color: #722359;
 }
 
 .btn.btn-primary:focus,
@@ -98,19 +98,19 @@ html body.bgcolor {
 }
 
 .btn-primary:not(:disabled):not(.disabled):active {
-  background-color: #e61d2b;
-  border-color: #e61d2b;
+  background-color: #722359;
+  border-color: #722359;
 }
 
 .btn.btn-outline-theme {
-  color: #e61d2b;
+  color: #722359;
   background-color: transparent;
-  border-color: #e61d2b;
+  border-color: #722359;
   border: 2px solid;
 }
 
 .bg-theme {
-  background-color: #e61d2b !important;
+  background-color: #722359 !important;
 }
 
 .br-0 {
@@ -120,8 +120,8 @@ html body.bgcolor {
 .btn.btn-primary:focus,
 .btn.btn-primary.focus,
 .btn.btn-primary:hover {
-  background-color: #e61d2b;
-  border-color: #e61d2b;
+  background-color: #722359;
+  border-color: #722359;
 }
 
 .text-bold {
@@ -574,4 +574,8 @@ html body.bgcolor {
 
 .formbtn .btn {
   margin-top: 60px;
+}
+
+.navbar-translate i {
+  font-size: 14px;
 }
