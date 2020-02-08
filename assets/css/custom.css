@@ -647,3 +647,11 @@ html body.bgcolor {
 .leaflet-control-container {
   display: none;
 }
+
+.btn.btn-outline-primary {
+  color: #722359;
+  background-color: transparent;
+  border-color: #722359;
+  text-transform: capitalize;
+  font-weight: bold;
+}
