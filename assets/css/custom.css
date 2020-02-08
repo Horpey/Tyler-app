@@ -626,7 +626,7 @@ html body.bgcolor {
 .fenceselect {
   position: absolute;
   width: 100%;
-  top: 28px;
+  top: 2%;
   z-index: 1;
 }
 .fselect-box {
@@ -761,4 +761,8 @@ html body.bgcolor {
 
 .leaflet-marker-pane img {
   border-radius: 60px;
+}
+
+.space-bottom {
+  margin-bottom: 150px;
 }
