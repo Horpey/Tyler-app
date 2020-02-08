@@ -1,5 +1,5 @@
 var map = new L.Map('mapid', {
-  zoom: 12,
+  zoom: 19,
   center: new L.latLng([41.57573, 13.002411])
 });
 
@@ -9,7 +9,7 @@ map.addLayer(
     {
       attribution:
         'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
+      maxZoom: 32,
       id: 'mapbox/streets-v11',
       accessToken: 'your.mapbox.access.token'
     }
@@ -28,8 +28,8 @@ gps
     let userLoc = e.latlng;
 
     var customUser = L.icon({
-      iconUrl: '../img/customUser.png',
-      shadowUrl: '../img/pointer.svg',
+      iconUrl: '../assets/img/tyler/avatar.png',
+      shadowUrl: '../assets/img/tyler/pointer.svg',
       iconSize: [50, 50], // size of the icon
       iconAnchor: [24, 35], // the same for the shadow
       shadowSize: [30, 40], // size of the shadow
@@ -42,33 +42,33 @@ gps
       .bindPopup('Hi, I am Custom User' + userLoc.lat);
 
     // Marker Drop
-    var marker = new L.marker([6.553903999999999, 3.3663607], {
-      // icon: customUser,
-      draggable: true
-    }).addTo(map);
+    // var marker = new L.marker([6.553903999999999, 3.3663607], {
+    //   // icon: customUser,
+    //   draggable: true
+    // }).addTo(map);
 
-    var circle = L.circle([6.553903999999999, 3.3663607], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 1000
-    }).addTo(map);
+    // var circle = L.circle([6.553903999999999, 3.3663607], {
+    //   color: 'red',
+    //   fillColor: '#f03',
+    //   fillOpacity: 0.5,
+    //   radius: 1000
+    // }).addTo(map);
 
     //TEsting If Inside
-    var d = map.distance(marker.getLatLng(), circle.getLatLng());
-    var isInside = d < circle.getRadius();
-    circle.setStyle({
-      fillColor: isInside ? 'green' : '#f03'
-    });
+    // var d = map.distance(marker.getLatLng(), circle.getLatLng());
+    // var isInside = d < circle.getRadius();
+    // circle.setStyle({
+    //   fillColor: isInside ? 'green' : '#f03'
+    // });
 
     //Even Drag If Inside
-    marker.on('drag', function(e) {
-      var d = map.distance(e.latlng, circle.getLatLng());
-      var isInside = d < circle.getRadius();
-      circle.setStyle({
-        fillColor: isInside ? 'green' : '#f03'
-      });
-    });
+    // marker.on('drag', function(e) {
+    //   var d = map.distance(e.latlng, circle.getLatLng());
+    //   var isInside = d < circle.getRadius();
+    //   circle.setStyle({
+    //     fillColor: isInside ? 'green' : '#f03'
+    //   });
+    // });
   })
   .on('gps:disabled', function(e) {
     e.marker.closePopup();

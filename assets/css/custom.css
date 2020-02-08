@@ -747,3 +747,7 @@ html body.bgcolor {
 .togglebutton label input[type='checkbox']:checked + .toggle {
   background-color: rgb(114, 36, 89);
 }
+
+.leaflet-marker-pane img {
+  border-radius: 60px;
+}
