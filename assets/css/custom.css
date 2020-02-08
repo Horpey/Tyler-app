@@ -313,7 +313,7 @@ html body.bgcolor {
 
 .bg-cut {
   background-color: transparent;
-  background-image: url(../img/coke/extract-bg.svg);
+  background-image: url(../img/tyler/nav/extract-bg.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -586,4 +586,64 @@ html body.bgcolor {
   padding: 43px;
   border-radius: 75px;
   color: #722459;
+}
+/* 
+.nav-custom .nav-item .nav-link p {
+  text-transform: capitalize;
+  font-size: 12px;
+  font-weight: bold;
+  color: #b4b4b4;
+}
+.nav-custom .nav-item .nav-link {
+  text-align: center;
+} */
+
+.nav-custom .nav-item .nav-link img {
+  height: 20px;
+}
+
+.nav-custom .nav-item .nav-link img.midicon {
+  height: 54px;
+}
+
+.fence-color {
+  background: #722359;
+  width: 30px;
+  height: 30px;
+  margin-top: 7px;
+  border-radius: 43px;
+}
+
+.fenceselect {
+  position: absolute;
+  width: 100%;
+  top: 28px;
+  z-index: 1;
+}
+.fselect-box {
+  box-shadow: 0px 0px 6px #00000030;
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background-color: white;
+}
+.fence-selectf {
+  background-image: none;
+}
+
+.fence-selectf .dropdown-toggle {
+  background-image: none;
+  padding-left: 0px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li a:focus {
+  background-color: #722359;
+}
+.userMap {
+  z-index: 0;
+  height: 100vh;
+}
+.leaflet-control-container {
+  display: none;
 }
