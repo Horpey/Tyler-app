@@ -3,6 +3,7 @@ var map = new L.Map('mapid', {
   center: new L.latLng([41.57573, 13.002411])
 });
 
+// let genLat, genLng;
 map.addLayer(
   new L.TileLayer(
     'https://api.mapbox.com/styles/v1/horpey/ck68ctwxv02oa1incg8s1rc9d/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaG9ycGV5IiwiYSI6ImNqZXNrOHgweDN3ZHgycW1lNGd0MzY2NG8ifQ.iE72uu46mll2LzAIP2KRQA',
@@ -36,6 +37,8 @@ gps
       popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
     });
 
+    let genLat = userLoc.lat;
+    let genLng = userLoc.lng;
     L.marker([userLoc.lat, userLoc.lng], { icon: customUser })
       .addTo(map)
       .bindPopup(
@@ -59,7 +62,7 @@ gps
       draggable: true
     }).addTo(map);
 
-    var circle = L.circle([6.553903999999999, 3.3663607], {
+    var circle = L.circle([genLat, genLng], {
       color: '#72235901',
       fillColor: '#DB4377',
       fillOpacity: 0.3,
@@ -81,14 +84,14 @@ gps
       if (isInside) {
         circle.setStyle({ fillColor: 'green' });
         toastr.success('User is within the Fence', '', {
-          timeOut: 5000,
+          timeOut: 2000,
           positionClass: 'toast-bottom-center'
         });
         beep();
       } else {
         circle.setStyle({ fillColor: '#DB4377' });
         toastr.error('User is Outside the Fence', '', {
-          timeOut: 5000,
+          timeOut: 2000,
           positionClass: 'toast-bottom-center'
         });
         beep();
@@ -149,5 +152,5 @@ gps.addTo(map);
 
 // BEep SOund
 function beep() {
-  window.navigator.vibrate([200, 100, 200]);
+  window.navigator.vibrate([500, 200, 500]);
 }
