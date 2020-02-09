@@ -75,7 +75,6 @@ gps
 
     //Even Drag If Inside
     marker.on('dragend', function(e) {
-      // console.log(e.target._latlng);
       var d = map.distance(e.target._latlng, circle.getLatLng());
 
       var isInside = d < circle.getRadius();
