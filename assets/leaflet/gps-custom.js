@@ -66,7 +66,7 @@ gps
       color: '#72235901',
       fillColor: '#DB4377',
       fillOpacity: 0.3,
-      radius: 100
+      radius: 120
     }).addTo(map);
 
     //TEsting If Inside
