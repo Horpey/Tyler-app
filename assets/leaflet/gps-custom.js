@@ -88,6 +88,7 @@ gps
           positionClass: 'toast-bottom-center'
         });
         beep();
+        // Newbeep();
       } else {
         circle.setStyle({ fillColor: '#DB4377' });
         toastr.error('User is Outside the Fence', '', {
@@ -95,6 +96,7 @@ gps
           positionClass: 'toast-bottom-center'
         });
         beep();
+        Newbeep();
       }
     });
   })
@@ -153,4 +155,10 @@ gps.addTo(map);
 // BEep SOund
 function beep() {
   window.navigator.vibrate([500, 200, 500]);
+}
+
+// New Beep
+function Newbeep() {
+  var x = document.getElementById('myAudio');
+  x.play();
 }
