@@ -57,7 +57,7 @@ gps
     });
 
     // Marker Drop
-    var marker = new L.marker([6.55490399999999, 3.3673607], {
+    var marker = new L.marker([genLat + 0.0014, genLng + 0.0014], {
       icon: customUser2,
       draggable: true
     }).addTo(map);
