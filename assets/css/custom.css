@@ -766,3 +766,7 @@ html body.bgcolor {
 .space-bottom {
   margin-bottom: 150px;
 }
+
+.toast-bottom-center {
+  bottom: 12% !important;
+}

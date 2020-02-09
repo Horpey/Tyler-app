@@ -40,15 +40,22 @@
 
 
     <div class="container">
-
         <form class="mx-2">
             <div class="form-group bmd-form-group m">
                 <input type="text" class="form-control" placeholder="Fence Name">
             </div>
-            <div class="form-group mt-5">
-                <label class="text-bold text-black">Select Fence Color</label>
+            <div class="form-group mt-3">
+                <div class="row">
+                    <div class="col-9">
+                        <label class="text-bold text-black" style="color: black">Select Fence Color</label>
+                    </div>
+                    <div class="col-3 ml-auto">
+                        <input type="color" class="form-control" placeholder="Fence Color">
+
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label class="text-bold text-black">Fence Style
                     <a type="button" data-toggle="tooltip" data-placement="bottom" title="" data-container="body"
                         data-original-title="Dynamic Style is ....">
@@ -73,11 +80,7 @@
                             <span class="check"></span>
                         </span>
                     </label>
-
-
                 </div>
-
-
             </div>
             <div class="formbtn">
                 <a href="fence.html" class="btn btn-primary btn-block">Create Fence</a>

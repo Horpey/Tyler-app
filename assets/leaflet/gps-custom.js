@@ -1,5 +1,5 @@
 var map = new L.Map('mapid', {
-  zoom: 15,
+  zoom: 17,
   center: new L.latLng([41.57573, 13.002411])
 });
 
@@ -38,36 +38,61 @@ gps
 
     L.marker([userLoc.lat, userLoc.lng], { icon: customUser })
       .addTo(map)
-      .bindPopup('Hi, I am Custom User' + userLoc.lat);
+      .bindPopup(
+        'Hi, I am Custom User with Cordinate ' + userLoc.lat + ' ' + userLoc.lng
+      );
+
+    // New USer
+    var customUser2 = L.icon({
+      iconUrl: '../assets/img/tyler/randomuser.png',
+      shadowUrl: '../assets/img/tyler/pointer.svg',
+      iconSize: [50, 50], // size of the icon
+      iconAnchor: [24, 35], // the same for the shadow
+      shadowSize: [30, 40], // size of the shadow
+      shadowAnchor: [14, 0], // the same for the shadow
+      popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
+    });
 
     // Marker Drop
-    // var marker = new L.marker([6.553903999999999, 3.3663607], {
-    //   // icon: customUser,
-    //   draggable: true
-    // }).addTo(map);
+    var marker = new L.marker([6.55490399999999, 3.3673607], {
+      icon: customUser2,
+      draggable: true
+    }).addTo(map);
 
-    // var circle = L.circle([6.553903999999999, 3.3663607], {
-    //   color: 'red',
-    //   fillColor: '#f03',
-    //   fillOpacity: 0.5,
-    //   radius: 1000
-    // }).addTo(map);
+    var circle = L.circle([6.553903999999999, 3.3663607], {
+      color: '#72235901',
+      fillColor: '#DB4377',
+      fillOpacity: 0.3,
+      radius: 100
+    }).addTo(map);
 
     //TEsting If Inside
-    // var d = map.distance(marker.getLatLng(), circle.getLatLng());
-    // var isInside = d < circle.getRadius();
-    // circle.setStyle({
-    //   fillColor: isInside ? 'green' : '#f03'
-    // });
+    var d = map.distance(marker.getLatLng(), circle.getLatLng());
+    var isInside = d < circle.getRadius();
+    circle.setStyle({
+      fillColor: isInside ? '#FFD6E4' : '#DB4377'
+    });
 
     //Even Drag If Inside
-    // marker.on('drag', function(e) {
-    //   var d = map.distance(e.latlng, circle.getLatLng());
-    //   var isInside = d < circle.getRadius();
-    //   circle.setStyle({
-    //     fillColor: isInside ? 'green' : '#f03'
-    //   });
-    // });
+    marker.on('dragend', function(e) {
+      // console.log(e.target._latlng);
+      var d = map.distance(e.target._latlng, circle.getLatLng());
+
+      var isInside = d < circle.getRadius();
+      if (isInside) {
+        circle.setStyle({ fillColor: 'green' });
+        toastr.success('User is within the Fence', '', {
+          timeOut: 5000,
+          positionClass: 'toast-bottom-center'
+        });
+      } else {
+        circle.setStyle({ fillColor: '#DB4377' });
+        toastr.error('User is Outside the Fence', '', {
+          timeOut: 5000,
+          positionClass: 'toast-bottom-center'
+        });
+      }
+    });
   })
   .on('gps:disabled', function(e) {
     e.marker.closePopup();
