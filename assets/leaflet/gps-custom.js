@@ -84,12 +84,14 @@ gps
           timeOut: 5000,
           positionClass: 'toast-bottom-center'
         });
+        beep();
       } else {
         circle.setStyle({ fillColor: '#DB4377' });
         toastr.error('User is Outside the Fence', '', {
           timeOut: 5000,
           positionClass: 'toast-bottom-center'
         });
+        beep();
       }
     });
   })
@@ -144,3 +146,8 @@ map.pm.setPathOptions({
 });
 
 gps.addTo(map);
+
+// BEep SOund
+function beep() {
+  window.navigator.vibrate([200, 100, 200]);
+}
